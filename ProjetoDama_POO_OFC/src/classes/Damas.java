@@ -1,5 +1,4 @@
 package classes;
-
 public class Damas {
 	
 	Tabuleiro tabuleiro;
@@ -28,6 +27,7 @@ public class Damas {
 	public void imprimir()
 	{
 		this.tabuleiro.imprimirConfiguracaoAtual();
+		System.out.println("\n\n\n");
 	}
 	
 	//Faz uma movimentação no jogo. Ao final da execução deste método uma peça terá 
@@ -35,10 +35,14 @@ public class Damas {
 	//ter sido realizado.
 	public void jogar(Jogador jogador, Peca nomePeca, String posicao)
 	{
-		if(this.jogador1.Nome == jogador.Nome || this.jogador2.Nome == jogador.Nome) {
-			if(this.jogador1.corPeca == nomePeca.cor) {
-				this.tabuleiro.isMovimentoValido(posicao,nomePeca);
-			}else if(this.jogador2.corPeca == nomePeca.cor) {
+		    if(this.jogador1.Nome == jogador.Nome || this.jogador2.Nome == jogador.Nome) {
+			if(this.jogador1.corPeca == nomePeca.cor) 
+			{
+				this.tabuleiro.isMovimentoValido(posicao, nomePeca);
+				//this.tabuleiro.imprimirConfiguracaoAtual();
+			}
+			else if(this.jogador2.corPeca == nomePeca.cor) 
+			{
 				this.tabuleiro.isMovimentoValido(posicao,nomePeca);
 			}
 		}

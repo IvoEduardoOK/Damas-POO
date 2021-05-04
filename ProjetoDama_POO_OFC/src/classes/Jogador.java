@@ -2,6 +2,8 @@ package classes;
 
 import java.util.ArrayList;
 
+import Classes_3.Peca;
+
 public class Jogador {
 	
 	String Nome;
