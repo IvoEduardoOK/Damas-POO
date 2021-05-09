@@ -28,7 +28,10 @@ public class Main_Dama {
 		jogo.jogar(j2,p1,"24");
 		jogo.jogar(j2, p2, "25");
 		jogo.imprimir();
+		jogo.jogar(j2,p2,"36");
 		jogo.jogar(j1, b1, "21");
+		jogo.imprimir();
+		jogo.jogar(j1, b2, "24");
 		jogo.imprimir();
 		
 	}

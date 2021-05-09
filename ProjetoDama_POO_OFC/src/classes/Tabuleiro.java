@@ -50,14 +50,20 @@ public class Tabuleiro {
 				this.tabu[peca.posicaoAtualX][peca.posicaoAtualY] = "*";
 				peca.atualizarPosicao(posicao);
 				this.tabu[peca.posicaoAtualX][peca.posicaoAtualY] = peca.nome;
-				
+
 				return true;
-			}else {
+			} else {
 				System.out.println("Movimento invalido!");
 				return false;
 			}
+		} else if (this.tabu[Character.getNumericValue(posicao.charAt(0))][Character
+				.getNumericValue(posicao.charAt(1))] != "*" && Character.getNumericValue(posicao.charAt(0)) < 8
+				&& Character.getNumericValue(posicao.charAt(1)) < 8) {
+			
+			return true;
 		} else {
-			System.out.println("Coordenadas não atendem aos limites fisicos do tabuleiro !");
+			System.out.println(
+					"Coordenadas não atendem aos limites fisicos do tabuleiro ou o movimento eh eliminatorio !");
 			return false;
 		}
 	}

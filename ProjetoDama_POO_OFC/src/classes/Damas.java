@@ -13,14 +13,6 @@ public class Damas {
 		this.jogador2 = j2;
 	}
 
-	public void adicionar(Tabuleiro tabuleiro) {
-
-	}
-
-	public void adicionar(Jogador jogador) {
-
-	}
-
 	// Imprime as informações do jogo
 	public void imprimir() {
 		this.tabuleiro.imprimirConfiguracaoAtual();
@@ -34,9 +26,13 @@ public class Damas {
 	public void jogar(Jogador jogador, Peca nomePeca, String posicao) {
 		if (this.jogador1.Nome == jogador.Nome || this.jogador2.Nome == jogador.Nome) {
 			if (this.jogador1.corPeca == nomePeca.cor) {
-				this.tabuleiro.isMovimentoValido(posicao, nomePeca);
+				if(this.tabuleiro.isMovimentoValido(posicao, nomePeca)) {
+					this.tabuleiro.isMovimentoEliminatorio(nomePeca, posicao);
+				}
 			} else if (this.jogador2.corPeca == nomePeca.cor) {
-				this.tabuleiro.isMovimentoValido(posicao, nomePeca);
+				if(this.tabuleiro.isMovimentoValido(posicao, nomePeca)) {
+					this.tabuleiro.isMovimentoEliminatorio(nomePeca, posicao);
+				}
 			}
 		}
 	}
